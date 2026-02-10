@@ -2,7 +2,9 @@
 # Uso: powershell -ExecutionPolicy Bypass -File backup-claude-config.ps1
 
 $ClaudeDir = "$env:USERPROFILE\.claude"
-$BackupDir = "$PSScriptRoot"  # Misma carpeta donde está este script
+$BackupDir = "$PSScriptRoot\backup"
+
+New-Item -ItemType Directory -Force -Path $BackupDir | Out-Null
 
 Write-Host "=== Backup de Claude Code config ===" -ForegroundColor Cyan
 
@@ -42,6 +44,6 @@ Write-Host ""
 Write-Host "Para restaurar despues de reinstalar:"
 Write-Host "  1. Instalar Claude Code"
 Write-Host "  2. Copy-Item $BackupDir\settings.json $ClaudeDir\"
-Write-Host "  3. Copy-Item $BackupDir\installed_plugins.json $ClaudeDir\plugins\"
+Write-Host "  3. New-Item -ItemType Directory -Force $ClaudeDir\plugins; Copy-Item $BackupDir\installed_plugins.json $ClaudeDir\plugins\"
 Write-Host "  4. Copy-Item $BackupDir\projects $ClaudeDir\projects -Recurse"
 Write-Host "  5. Reiniciar Claude Code (los plugins se re-descargan solos)"

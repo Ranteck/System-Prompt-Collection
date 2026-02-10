@@ -2,8 +2,10 @@
 # Backup de configuración de Claude Code
 # Uso: bash backup-claude-config.sh
 
-BACKUP_DIR="/home/denis/Documentos/personal/System-Prompt-Collection/claude"
-TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+BACKUP_DIR="$SCRIPT_DIR/backup"
+
+mkdir -p "$BACKUP_DIR"
 
 echo "=== Backup de Claude Code config ==="
 
@@ -32,7 +34,7 @@ echo ""
 echo "Para restaurar después de reinstalar:"
 echo "  1. Instalar Claude Code"
 echo "  2. cp $BACKUP_DIR/settings.json ~/.claude/"
-echo "  3. cp $BACKUP_DIR/installed_plugins.json ~/.claude/plugins/"
+echo "  3. mkdir -p ~/.claude/plugins && cp $BACKUP_DIR/installed_plugins.json ~/.claude/plugins/"
 echo "  4. rsync -a $BACKUP_DIR/projects/ ~/.claude/projects/"
 echo "  5. [Opcional] cp $BACKUP_DIR/mcp.json ~/.mcp.json"
 echo "  6. Reiniciar Claude Code (los plugins se re-descargan solos)"
