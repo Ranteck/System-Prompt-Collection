@@ -28,6 +28,11 @@ if [ -f ~/.claude/keybindings.json ]; then
     cp ~/.claude/keybindings.json "$BACKUP_DIR/keybindings.json" && echo "[OK] keybindings.json"
 fi
 
+# Custom commands (slash commands personales)
+if [ -d ~/.claude/commands ]; then
+    rsync -a --delete ~/.claude/commands/ "$BACKUP_DIR/commands/" 2>/dev/null && echo "[OK] commands/"
+fi
+
 echo ""
 echo "=== Backup completado en $BACKUP_DIR ==="
 echo ""
@@ -37,4 +42,5 @@ echo "  2. cp $BACKUP_DIR/settings.json ~/.claude/"
 echo "  3. mkdir -p ~/.claude/plugins && cp $BACKUP_DIR/installed_plugins.json ~/.claude/plugins/"
 echo "  4. rsync -a $BACKUP_DIR/projects/ ~/.claude/projects/"
 echo "  5. [Opcional] cp $BACKUP_DIR/mcp.json ~/.mcp.json"
-echo "  6. Reiniciar Claude Code (los plugins se re-descargan solos)"
+echo "  6. rsync -a $BACKUP_DIR/commands/ ~/.claude/commands/"
+echo "  7. Reiniciar Claude Code (los plugins se re-descargan solos)"
