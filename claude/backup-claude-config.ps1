@@ -22,6 +22,7 @@ if (Test-Path "$ClaudeDir\plugins\installed_plugins.json") {
 
 # Projects (per-project settings, memory)
 if (Test-Path "$ClaudeDir\projects") {
+    if (Test-Path "$BackupDir\projects") { Remove-Item "$BackupDir\projects" -Recurse -Force }
     Copy-Item "$ClaudeDir\projects" "$BackupDir\projects" -Recurse -Force
     Write-Host "[OK] projects\" -ForegroundColor Green
 }
@@ -40,6 +41,7 @@ if (Test-Path "$ClaudeDir\keybindings.json") {
 
 # Custom commands (slash commands personales)
 if (Test-Path "$ClaudeDir\commands") {
+    if (Test-Path "$BackupDir\commands") { Remove-Item "$BackupDir\commands" -Recurse -Force }
     Copy-Item "$ClaudeDir\commands" "$BackupDir\commands" -Recurse -Force
     Write-Host "[OK] commands\" -ForegroundColor Green
 }
