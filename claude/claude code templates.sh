@@ -1,1 +1,0 @@
-npx claude-code-templates@latest --setting=statusline/context-monitor --yes
