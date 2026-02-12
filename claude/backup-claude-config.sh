@@ -28,9 +28,14 @@ if [ -f ~/.claude/keybindings.json ]; then
     cp ~/.claude/keybindings.json "$BACKUP_DIR/keybindings.json" && echo "[OK] keybindings.json"
 fi
 
-# Custom commands (slash commands personales)
+# Custom commands (slash commands legacy)
 if [ -d ~/.claude/commands ]; then
     rsync -a --delete ~/.claude/commands/ "$BACKUP_DIR/commands/" 2>/dev/null && echo "[OK] commands/"
+fi
+
+# Skills (slash commands actual)
+if [ -d ~/.claude/skills ]; then
+    rsync -a --delete ~/.claude/skills/ "$BACKUP_DIR/skills/" 2>/dev/null && echo "[OK] skills/"
 fi
 
 echo ""
@@ -43,4 +48,5 @@ echo "  3. mkdir -p ~/.claude/plugins && cp $BACKUP_DIR/installed_plugins.json ~
 echo "  4. rsync -a $BACKUP_DIR/projects/ ~/.claude/projects/"
 echo "  5. [Opcional] cp $BACKUP_DIR/mcp.json ~/.mcp.json"
 echo "  6. rsync -a $BACKUP_DIR/commands/ ~/.claude/commands/"
-echo "  7. Reiniciar Claude Code (los plugins se re-descargan solos)"
+echo "  7. rsync -a $BACKUP_DIR/skills/ ~/.claude/skills/"
+echo "  8. Reiniciar Claude Code (los plugins se re-descargan solos)"

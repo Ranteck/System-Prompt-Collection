@@ -39,11 +39,18 @@ if (Test-Path "$ClaudeDir\keybindings.json") {
     Write-Host "[OK] keybindings.json" -ForegroundColor Green
 }
 
-# Custom commands (slash commands personales)
+# Custom commands (slash commands legacy)
 if (Test-Path "$ClaudeDir\commands") {
     if (Test-Path "$BackupDir\commands") { Remove-Item "$BackupDir\commands" -Recurse -Force }
     Copy-Item "$ClaudeDir\commands" "$BackupDir\commands" -Recurse -Force
     Write-Host "[OK] commands\" -ForegroundColor Green
+}
+
+# Skills (slash commands actual)
+if (Test-Path "$ClaudeDir\skills") {
+    if (Test-Path "$BackupDir\skills") { Remove-Item "$BackupDir\skills" -Recurse -Force }
+    Copy-Item "$ClaudeDir\skills" "$BackupDir\skills" -Recurse -Force
+    Write-Host "[OK] skills\" -ForegroundColor Green
 }
 
 Write-Host ""
@@ -55,4 +62,5 @@ Write-Host "  2. Copy-Item $BackupDir\settings.json $ClaudeDir\"
 Write-Host "  3. New-Item -ItemType Directory -Force $ClaudeDir\plugins; Copy-Item $BackupDir\installed_plugins.json $ClaudeDir\plugins\"
 Write-Host "  4. Copy-Item $BackupDir\projects $ClaudeDir\projects -Recurse"
 Write-Host "  5. Copy-Item $BackupDir\commands $ClaudeDir\commands -Recurse"
-Write-Host "  6. Reiniciar Claude Code (los plugins se re-descargan solos)"
+Write-Host "  6. Copy-Item $BackupDir\skills $ClaudeDir\skills -Recurse"
+Write-Host "  7. Reiniciar Claude Code (los plugins se re-descargan solos)"
