@@ -151,16 +151,6 @@
         "gitCommitSha": "2cd88e7947b7382e045666abee790c7f55f669f3"
       }
     ],
-    "greptile@claude-plugins-official": [
-      {
-        "scope": "user",
-        "installPath": "/home/denis/.claude/plugins/cache/claude-plugins-official/greptile/2cd88e7947b7",
-        "version": "2cd88e7947b7",
-        "installedAt": "2026-02-10T15:18:26.590Z",
-        "lastUpdated": "2026-02-10T15:18:26.590Z",
-        "gitCommitSha": "2cd88e7947b7382e045666abee790c7f55f669f3"
-      }
-    ],
     "hookify@claude-plugins-official": [
       {
         "scope": "user",
@@ -191,16 +181,6 @@
         "gitCommitSha": "2cd88e7947b7382e045666abee790c7f55f669f3"
       }
     ],
-    "sentry@claude-plugins-official": [
-      {
-        "scope": "user",
-        "installPath": "/home/denis/.claude/plugins/cache/claude-plugins-official/sentry/1.0.0",
-        "version": "1.0.0",
-        "installedAt": "2026-02-10T15:18:27.667Z",
-        "lastUpdated": "2026-02-10T15:18:27.667Z",
-        "gitCommitSha": "d237d4c314e9066689c401a3d61dd3bbfbb7a209"
-      }
-    ],
     "clangd-lsp@claude-plugins-official": [
       {
         "scope": "user",
@@ -209,16 +189,6 @@
         "installedAt": "2026-02-10T15:18:27.671Z",
         "lastUpdated": "2026-02-10T15:18:27.671Z",
         "gitCommitSha": "2cd88e7947b7382e045666abee790c7f55f669f3"
-      }
-    ],
-    "circleback@claude-plugins-official": [
-      {
-        "scope": "user",
-        "installPath": "/home/denis/.claude/plugins/cache/claude-plugins-official/circleback/1.0.0",
-        "version": "1.0.0",
-        "installedAt": "2026-02-10T15:18:28.582Z",
-        "lastUpdated": "2026-02-10T15:18:28.582Z",
-        "gitCommitSha": "6369dec7da4059dd0a12cf1b62ba749799ee15ef"
       }
     ]
   }

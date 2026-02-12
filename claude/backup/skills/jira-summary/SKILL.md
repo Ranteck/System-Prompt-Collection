@@ -1,5 +1,7 @@
 ---
+name: jira-summary
 description: Resumen diario de commits para Jira (no técnico)
+allowed-tools: ["Bash(git log:*)", "Bash(git branch:*)", "Bash(date:*)"]
 ---
 
 ## Contexto
